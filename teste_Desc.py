@@ -12,8 +12,10 @@ def descript( v ):
     #             .format( ord( v[i]), (22 * (i+1)), formula, caractere))
     #     r += caractere
     for i, c in enumerate( v ):
+        # if i > 9: n =0
         convert_text = ord( c )
-        caractere = ( chr( convert_text-22 * (i +1)))
+        caractere = ( chr( convert_text - 22 * (i +1) ) )
+        # n += 1
         r += caractere
         print( 'Ordinal {}, Caractere {}'.format( convert_text, caractere))
     return r       
