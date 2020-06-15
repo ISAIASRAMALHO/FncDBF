@@ -4,33 +4,24 @@ def descript( v ):
     r = ''
     caractere = ''
     n = 0
-    for i in range(0, t ):
-        formula = ord( v[i] ) - ( 22 * (n + 1) )
-        n += 1
-        if len(caractere) % 10 == 0 : n = 1
-        print( 'Caractere: {}'.format(formula))
-        caractere = chr( formula )
+    convert_text = 0
+    # for i in range(0, t ):
+    #     formula = ord( v[i] ) - ( 22 * (i + 1) )
+    #     caractere = chr( formula )
+    #     print( 'Ordinal: {} - Calculo {} - Resultado {} - Caractere {}'
+    #             .format( ord( v[i]), (22 * (i+1)), formula, caractere))
+    #     r += caractere
+    for i, c in enumerate( v ):
+        convert_text = ord( c )
+        caractere = ( chr( convert_text-22 * (i +1)))
         r += caractere
-        print('Formula {}, for número: {}'.format(formula, r )  )
+        print( 'Ordinal {}, Caractere {}'.format( convert_text, caractere))
     return r       
 
 
-word = '\~¦±Ííóü;V_w¡ÐçØ!3Ocg\r´Êàö'
+
+
+# CAMPO C_CODIGO = 00002. C_CLIENTE = CARLOS JOSE ALVES FEITOSA
+word = 'Ym¤½×ºú/7(_ ¥É¬èý8Icg\r´Êàö"8Ndz¦¼Òèþ'
 
 print( descript(word ) )
-
-# t = len( word)
-# w = ''
-# print('Quantidade de caracteres: {}'.format( t ))
-
-# for c in range(0, t ):
-#     w += word[c]
-#     print( w)
-
-
-# print('Original: {}'.format(word))
-
-
-# sub = descript( word )
-
-# print( sub )
