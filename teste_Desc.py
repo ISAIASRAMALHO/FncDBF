@@ -1,23 +1,18 @@
 def descript( v ):
-    formula = 0
-    t = len( v )
     r = ''
     caractere = ''
-    n = 0
     convert_text = 0
-    # for i in range(0, t ):
-    #     formula = ord( v[i] ) - ( 22 * (i + 1) )
-    #     caractere = chr( formula )
-    #     print( 'Ordinal: {} - Calculo {} - Resultado {} - Caractere {}'
-    #             .format( ord( v[i]), (22 * (i+1)), formula, caractere))
-    #     r += caractere
+    formula = 0
+
     for i, c in enumerate( v ):
-        # if i > 9: n =0
-        convert_text = ord( c )
-        caractere = ( chr( convert_text - 22 * (i +1) ) )
-        # n += 1
+        convert_text = ord( c ) - 22 * (i+1)
+        if convert_text < 0:
+            caractere = ( chr( convert_text + 256 ) )
+        else:
+            caractere = ( chr( convert_text  ) )
         r += caractere
-        print( 'Ordinal {}, Caractere {}'.format( convert_text, caractere))
+        print( 'Ordem: {} - Ordinal: {} - Caractere Original: {} - Formula ( 22 * ({}+1): {} - Caractere Descriptografado: {}'
+            .format( i, convert_text, c, i,  int(22 * (i+1)), caractere))
     return r       
 
 
@@ -26,4 +21,14 @@ def descript( v ):
 # CAMPO C_CODIGO = 00002. C_CLIENTE = CARLOS JOSE ALVES FEITOSA
 word = 'Ym¤½×ºú/7(_ ¥É¬èý8Icg\r´Êàö"8Ndz¦¼Òèþ'
 
-print( descript(word ) )
+w2 = '/7(_ ¥É'
+
+word2 = 'lm³Òãü+@(l¥É¬õ6?cF\r´Êàö"8Ndz¦¼Òèþ'
+
+print( descript(word) )
+
+# w1 = word[0:8]
+# w2 = word[9:17]
+
+# print( descript( w1 ) )
+# print( descript( w2 ) )
