@@ -2,8 +2,6 @@ def descript( v ):
     r = ''
     caractere = ''
     convert_text = 0
-    formula = 0
-
     for i, c in enumerate( v ):
         convert_text = ord( c ) - ( 22 * (i+1) ) 
         if convert_text >= 0 and convert_text <= 255:
@@ -18,22 +16,12 @@ def descript( v ):
     return r       
 
 
-
-
 # CAMPO C_CODIGO = 00002. C_CLIENTE = CARLOS JOSE ALVES FEITOSA
 word = 'Ym¤½×ºú/7(_ ¥É¬èý8Icg\r´Êàö"8Ndz¦¼Òèþ'
 
 # for i, c in enumerate( word ):
 #     print('Ordem: {} - Caractere: {} - Ordinal: {}'.format( i, c, ord( c )))
 
-w2 = '/7(_ ¥É'
-
 word2 = 'lm³Òãü+@(l¥É¬õ6?cF\r´Êàö"8Ndz¦¼Òèþ'
 
 print( descript(word2) )
-
-# w1 = word[0:8]
-# w2 = word[9:17]
-
-# print( descript( w1 ) )
-# print( descript( w2 ) )
