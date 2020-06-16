@@ -8,11 +8,13 @@ def descript( v ):
         convert_text = ord( c ) - 22 * (i+1)
         if convert_text < 0:
             caractere = ( chr( convert_text + 256 ) )
+        elif convert_text > 255:
+            caractere = ( chr( convert_text - 255  ) )
         else:
-            caractere = ( chr( convert_text  ) )
+            caractere= ( chr( convert_text ) )
         r += caractere
         print( 'Ordem: {} - Ordinal: {} - Caractere Original: {} - Formula ( 22 * ({}+1): {} - Caractere Descriptografado: {}'
-            .format( i, convert_text, c, i,  int(22 * (i+1)), caractere))
+            .format( i, ord(c), c, i,  int(22 * (i+1)), caractere))
     return r       
 
 
